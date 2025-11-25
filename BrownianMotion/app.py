@@ -967,7 +967,7 @@ def main():
             n_experiments = st.number_input(
                 "Repeticiones (n) para visualizar", 
                 min_value=1, 
-                max_value=20, 
+                max_value=10000, 
                 value=5,
                 help="Numero de experimentos a visualizar (max 20 para claridad)"
             )
