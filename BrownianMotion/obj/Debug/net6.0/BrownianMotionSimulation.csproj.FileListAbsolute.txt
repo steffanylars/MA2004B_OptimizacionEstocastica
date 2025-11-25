@@ -1,0 +1,14 @@
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/BrownianMotion/bin/Debug/net6.0/BrownianMotionSimulation
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/BrownianMotion/bin/Debug/net6.0/BrownianMotionSimulation.deps.json
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/BrownianMotion/bin/Debug/net6.0/BrownianMotionSimulation.runtimeconfig.json
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/BrownianMotion/bin/Debug/net6.0/BrownianMotionSimulation.dll
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/BrownianMotion/bin/Debug/net6.0/BrownianMotionSimulation.pdb
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/BrownianMotion/obj/Debug/net6.0/BrownianMotionSimulation.GeneratedMSBuildEditorConfig.editorconfig
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/BrownianMotion/obj/Debug/net6.0/BrownianMotionSimulation.AssemblyInfoInputs.cache
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/BrownianMotion/obj/Debug/net6.0/BrownianMotionSimulation.AssemblyInfo.cs
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/BrownianMotion/obj/Debug/net6.0/BrownianMotionSimulation.csproj.CoreCompileInputs.cache
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/BrownianMotion/obj/Debug/net6.0/BrownianMotionSimulation.dll
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/BrownianMotion/obj/Debug/net6.0/refint/BrownianMotionSimulation.dll
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/BrownianMotion/obj/Debug/net6.0/BrownianMotionSimulation.pdb
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/BrownianMotion/obj/Debug/net6.0/BrownianMotionSimulation.genruntimeconfig.cache
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/BrownianMotion/obj/Debug/net6.0/ref/BrownianMotionSimulation.dll
