@@ -1,0 +1,15 @@
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/RecordandoCSharp/bin/Debug/net8.0/RecordandoCSharp
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/RecordandoCSharp/bin/Debug/net8.0/RecordandoCSharp.deps.json
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/RecordandoCSharp/bin/Debug/net8.0/RecordandoCSharp.runtimeconfig.json
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/RecordandoCSharp/bin/Debug/net8.0/RecordandoCSharp.dll
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/RecordandoCSharp/bin/Debug/net8.0/RecordandoCSharp.pdb
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/RecordandoCSharp/obj/Debug/net8.0/RecordandoCSharp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/RecordandoCSharp/obj/Debug/net8.0/RecordandoCSharp.AssemblyInfoInputs.cache
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/RecordandoCSharp/obj/Debug/net8.0/RecordandoCSharp.AssemblyInfo.cs
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/RecordandoCSharp/obj/Debug/net8.0/RecordandoCSharp.csproj.CoreCompileInputs.cache
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/RecordandoCSharp/obj/Debug/net8.0/RecordandoCSharp.sourcelink.json
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/RecordandoCSharp/obj/Debug/net8.0/RecordandoCSharp.dll
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/RecordandoCSharp/obj/Debug/net8.0/refint/RecordandoCSharp.dll
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/RecordandoCSharp/obj/Debug/net8.0/RecordandoCSharp.pdb
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/RecordandoCSharp/obj/Debug/net8.0/RecordandoCSharp.genruntimeconfig.cache
+/Users/steff/Documents/GitHub/MA2004B_OptimizacionEstocastica/RecordandoCSharp/obj/Debug/net8.0/ref/RecordandoCSharp.dll
