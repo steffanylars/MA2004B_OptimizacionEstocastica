@@ -12,8 +12,14 @@ import plotly.express as px
 import plotly.graph_objects as go
 from dataclasses import dataclass, field
 from typing import List, Optional
-from joblib import Parallel, delayed
 import io
+
+# Importar joblib si esta disponible, sino usar fallback
+try:
+    from joblib import Parallel, delayed
+    JOBLIB_AVAILABLE = True
+except ImportError:
+    JOBLIB_AVAILABLE = False
 
 # ============================================================================
 # CLASES DEL SIMULADOR
@@ -133,7 +139,7 @@ class SimulationEngine:
         
         start_time = time.perf_counter()
         
-        if use_parallel and repetitions >= 100:
+        if use_parallel and JOBLIB_AVAILABLE and repetitions >= 100:
             # Usar paralelismo para muchas repeticiones
             n_jobs = -1  # Usar todos los cores disponibles
             max_distances = Parallel(n_jobs=n_jobs, backend='loky')(
@@ -144,7 +150,7 @@ class SimulationEngine:
             if progress_callback:
                 progress_callback(1.0)
         else:
-            # Ejecucion secuencial para pocas repeticiones
+            # Ejecucion secuencial (vectorizada, sigue siendo rapida)
             brownian = BrownianMotion(dimensions, steps)
             for i in range(repetitions):
                 max_distance = brownian.execute_walk()
@@ -1118,8 +1124,8 @@ def main():
     ---
     
     **Optimizaciones:**
-    - Vectorizacion NumPy
-    - Paralelismo con joblib
+    - Vectorizacion NumPy: Activa
+    - Paralelismo joblib: {'Activo' if JOBLIB_AVAILABLE else 'No disponible'}
     """)
 
 
