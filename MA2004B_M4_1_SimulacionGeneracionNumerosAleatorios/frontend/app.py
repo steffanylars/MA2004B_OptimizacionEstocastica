@@ -14,10 +14,12 @@ if not os.path.exists(exe_path):
         exe_path
     ]
     try:
-        subprocess.run(compile_cmd, check=True, cwd=".")
+        compile_result = subprocess.run(compile_cmd, capture_output=True, text=True, cwd=".")
+        if compile_result.returncode != 0:
+            raise subprocess.CalledProcessError(compile_result.returncode, compile_cmd, compile_result.stdout, compile_result.stderr)
         st.info("Backend compilado exitosamente.")
     except subprocess.CalledProcessError as e:
-        st.error(f"Error al compilar backend: {e}")
+        st.error(f"Error al compilar backend: {e}\nStderr: {e.stderr}")
 
 st.set_page_config(page_title="Método Congruencial Lineal", layout="centered")
 st.title("Método Congruencial Lineal")
