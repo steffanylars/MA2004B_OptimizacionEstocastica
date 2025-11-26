@@ -1,0 +1,16 @@
+# Ejecutables compilados
+main
+backend/main
+*.exe
+*.out
+
+# Archivos generados
+output.csv
+backend/output.csv
+
+# Archivos de Mac
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
