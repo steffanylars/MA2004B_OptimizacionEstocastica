@@ -25,9 +25,20 @@ if st.button("Generar secuencia"):
     exe_path = os.path.join("backend", "main")
 
     if not os.path.exists(exe_path):
-        st.error(f"No se encontró el ejecutable C++ en: {exe_path}\n"
-                 f"Compila primero el backend (ver README).")
-    else:
+        compile_cmd = [
+            "g++",
+            "backend/main.cpp",
+            "backend/LinearCongruentialGenerator.cpp",
+            "-o",
+            exe_path
+        ]
+        try:
+            subprocess.run(compile_cmd, check=True, cwd=".")
+            st.info("Backend compilado exitosamente.")
+        except subprocess.CalledProcessError as e:
+            st.error(f"Error al compilar backend: {e}")
+        else:   
+            st.error("No se encontró el ejecutable del backend. Asegúrese de que la compilación fue exitosa.")
         # Ejecutar el programa C++ con los argumentos
         cmd = [
             exe_path,
