@@ -3,23 +3,49 @@ import subprocess
 import pandas as pd
 import os
 
+# Obtener el directorio donde está este script
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Rutas absolutas
+BACKEND_DIR = os.path.join(BASE_DIR, "backend")
+EXE_PATH = os.path.join(BACKEND_DIR, "main")
+OUTPUT_CSV = os.path.join(BASE_DIR, "output.csv")
+
 # Compila el backend si no existe el ejecutable
-exe_path = os.path.join("backend", "main")
-if not os.path.exists(exe_path):
+if not os.path.exists(EXE_PATH):
+    main_cpp = os.path.join(BACKEND_DIR, "main.cpp")
+    lcg_cpp = os.path.join(BACKEND_DIR, "LinearCongruentialGenerator.cpp")
+    
+    # Verificar que existen los archivos fuente
+    if not os.path.exists(main_cpp):
+        st.error(f"No se encontró: {main_cpp}")
+        st.stop()
+    if not os.path.exists(lcg_cpp):
+        st.error(f"No se encontró: {lcg_cpp}")
+        st.stop()
+    
     compile_cmd = [
         "g++",
-        "backend/main.cpp",
-        "backend/LinearCongruentialGenerator.cpp",
+        main_cpp,
+        lcg_cpp,
         "-o",
-        exe_path
+        EXE_PATH
     ]
+    
     try:
-        compile_result = subprocess.run(compile_cmd, capture_output=True, text=True, cwd=".")
+        compile_result = subprocess.run(
+            compile_cmd,
+            capture_output=True,
+            text=True,
+            cwd=BASE_DIR
+        )
         if compile_result.returncode != 0:
-            raise subprocess.CalledProcessError(compile_result.returncode, compile_cmd, compile_result.stdout, compile_result.stderr)
+            st.error(f"Error al compilar backend:\n{compile_result.stderr}")
+            st.stop()
         st.info("Backend compilado exitosamente.")
-    except subprocess.CalledProcessError as e:
-        st.error(f"Error al compilar backend: {e}\nStderr: {e.stderr}")
+    except Exception as e:
+        st.error(f"Error al compilar: {e}")
+        st.stop()
 
 st.set_page_config(page_title="Método Congruencial Lineal", layout="centered")
 st.title("Método Congruencial Lineal")
@@ -40,13 +66,11 @@ modo_flag = 1 if modo == "Pseudoaleatorio (MCL)" else 0
 st.markdown("---")
 
 if st.button("Generar secuencia"):
-    if not os.path.exists(exe_path):
-        st.error(f"No se encontró el ejecutable C++ en: {exe_path}\n"
-                 f"Compila primero el backend (ver README).")
+    if not os.path.exists(EXE_PATH):
+        st.error(f"No se encontró el ejecutable C++ en: {EXE_PATH}")
     else:
-        # Ejecutar el programa C++ con los argumentos
         cmd = [
-            exe_path,
+            EXE_PATH,
             str(int(m)),
             str(int(a)),
             str(int(c)),
@@ -60,15 +84,14 @@ if st.button("Generar secuencia"):
                 cmd,
                 capture_output=True,
                 text=True,
-                cwd="."  # directorio raíz del proyecto
+                cwd=BASE_DIR  # Ejecutar desde el directorio base
             )
 
             if result.returncode != 0:
                 st.error("Error al ejecutar el backend C++:")
                 st.code(result.stderr)
             else:
-                # Leer el CSV generado por el backend (en el directorio raíz)
-                csv_path = os.path.join(".", "output.csv")
+                csv_path = os.path.join(BASE_DIR, "output.csv")
                 if not os.path.exists(csv_path):
                     st.error("No se encontró output.csv después de ejecutar el backend.")
                 else:
@@ -80,7 +103,6 @@ if st.button("Generar secuencia"):
                     st.subheader("Gráfica de la secuencia")
                     st.line_chart(df.set_index("index")["value"])
 
-                    # Botón para descargar el CSV
                     csv_bytes = df.to_csv(index=False).encode("utf-8")
                     st.download_button(
                         label="Descargar CSV",
@@ -89,7 +111,8 @@ if st.button("Generar secuencia"):
                         mime="text/csv"
                     )
 
-                    st.markdown("**Mensaje del backend:**")
-                    st.code(result.stdout)
+                    if result.stdout:
+                        st.markdown("**Mensaje del backend:**")
+                        st.code(result.stdout)
         except Exception as e:
             st.error(f"Ocurrió un error al intentar ejecutar el backend: {e}")
