@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BrownianMotionSimulation")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c94f789b5f4dc77366d6fc393de89147e607cfb0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e82116d8a91d9fb6a90c21a5fe7971957f1a9a2d")]
 [assembly: System.Reflection.AssemblyProductAttribute("BrownianMotionSimulation")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BrownianMotionSimulation")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
