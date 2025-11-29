@@ -52,7 +52,6 @@ int main(int argc, char* argv[]) {
         out.close();
 
         return 0;
-    }
     catch (const std::exception& e) {
         std::cerr << "Error de conversion de argumentos: " << e.what() << "\n";
         return 1;
