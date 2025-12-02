@@ -1,7 +1,9 @@
+
 '''
     Steffany Mishell Lara Muy
     A00838589
     Optimización Estocástica
+    Codigo de examen final - Algoritmo de Montecarlo
 '''
 # Importar Librerías
 import streamlit as st
