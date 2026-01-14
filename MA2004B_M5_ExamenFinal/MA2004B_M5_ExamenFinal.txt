@@ -28,7 +28,7 @@ class Montecarlo():
         self.areas = []
         self.integral_estimacion = 0
         
-        if self.usar_infinito:
+        if self.usar_infinito: 
             self.generar_valores_infinito()
         else:
             self.generar_valores_aleatorios()
